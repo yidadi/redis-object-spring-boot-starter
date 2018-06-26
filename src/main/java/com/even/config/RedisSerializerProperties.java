@@ -1,8 +1,8 @@
-package com.haixue.config;
+package com.even.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "haixue.redis")
+@ConfigurationProperties(prefix = "even.redis")
 public class RedisSerializerProperties {
     /** 序列化方式，json&kryo */
     private String type;

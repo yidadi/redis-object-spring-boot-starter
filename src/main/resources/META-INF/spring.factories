@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.haixue.config.RedisSerializerConfiguration
+com.even.config.RedisSerializerConfiguration

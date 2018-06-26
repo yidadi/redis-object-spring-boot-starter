@@ -1,4 +1,4 @@
-package com.haixue.config;
+package com.even.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -9,8 +9,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import com.alibaba.fastjson.parser.ParserConfig;
-import com.haixue.serializer.FastJsonRedisSerializer;
-import com.haixue.serializer.KryoRedisSerializer;
+import com.even.serializer.FastJsonRedisSerializer;
+import com.even.serializer.KryoRedisSerializer;
 
 
 @Configuration
@@ -25,7 +25,7 @@ public class RedisSerializerConfiguration {
      * @return
      */
     @Bean("redisTemplate")
-    @ConditionalOnProperty(prefix = "haixue.redis", name = "type", havingValue = "json")
+    @ConditionalOnProperty(prefix = "even.redis", name = "type", havingValue = "json")
     public RedisTemplate redisTemplateJson(RedisTemplate redisTemplate) {
         // 全局开启AutoType，不建议使用
         // ParserConfig.getGlobalInstance().setAutoTypeSupport(true);
@@ -45,7 +45,7 @@ public class RedisSerializerConfiguration {
      * @return
      */
     @Bean("redisTemplate")
-    @ConditionalOnProperty(prefix = "haixue.redis", name = "type", havingValue = "kryo")
+    @ConditionalOnProperty(prefix = "even.redis", name = "type", havingValue = "kryo")
     public RedisTemplate redisTemplateKryo(RedisTemplate redisTemplate) {
         redisTemplate.setValueSerializer(new KryoRedisSerializer<>(Object.class));
         // 设置键（key）的序列化采用StringRedisSerializer。

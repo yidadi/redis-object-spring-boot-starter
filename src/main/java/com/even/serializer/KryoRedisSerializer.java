@@ -1,4 +1,4 @@
-package com.haixue.serializer;
+package com.even.serializer;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
